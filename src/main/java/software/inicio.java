@@ -45,6 +45,16 @@ public class inicio extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnAlunos = new JButton("Alunos");
+		btnAlunos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					alunos telaAlunos = new alunos();
+					telaAlunos.setVisible(true);
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
 		btnAlunos.setBounds(10, 11, 89, 23);
 		contentPane.add(btnAlunos);
 		
@@ -59,19 +69,49 @@ public class inicio extends JFrame {
 		contentPane.add(btnTurmas);
 		
 		JButton btnGerenciar = new JButton("Gerenciar");
-		btnGerenciar.setBounds(208, 11, 89, 23);
+		btnGerenciar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					gestor telaGestor = new gestor();
+					telaGestor.setVisible(true);
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+		});
+		btnGerenciar.setBounds(208, 11, 116, 23);
 		contentPane.add(btnGerenciar);
 		
 		JButton btnSair = new JButton("Sair");
+		btnSair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					confirm telaConfirm = new confirm();
+					telaConfirm.setVisible(true);
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+		});
 		btnSair.setBounds(485, 327, 89, 23);
 		contentPane.add(btnSair);
 		
 		JButton btnPerfil = new JButton("Perfil");
+		btnPerfil.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					perfil telaPerfil = new perfil();
+					telaPerfil.setVisible(true);
+				} catch (Exception e3) {
+					e3.printStackTrace();
+				}
+			}
+		});
 		btnPerfil.setBounds(485, 11, 89, 23);
 		contentPane.add(btnPerfil);
 		
 		JButton btnGerar = new JButton("Gerar Resultado");
-		btnGerar.setBounds(10, 327, 116, 23);
+		btnGerar.setBounds(10, 327, 188, 23);
 		contentPane.add(btnGerar);
 	}
 }
