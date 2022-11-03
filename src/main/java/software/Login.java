@@ -1,103 +1,79 @@
 package software;
 
-public class Login extends javax.swing.JFrame {
+import java.awt.EventQueue;
 
-    public Login() {
-        initComponents();
-    }
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
+import javax.swing.SwingConstants;
 
-        entrar = new javax.swing.JButton();
-        sair = new javax.swing.JButton();
-        usuario = new javax.swing.JTextField();
-        label_titulo1 = new javax.swing.JLabel();
-        label_usuario = new javax.swing.JLabel();
-        senha = new javax.swing.JPasswordField();
+public class login extends JFrame {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+	private JPanel contentPane;
+	private JTextField usuario;
+	private JPasswordField senha;
 
-        entrar.setText("Entrar");
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					login frame = new login();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
-        sair.setText("Sair");
+	/**
+	 * Create the frame.
+	 */
+	public login() {
+		setTitle("Login");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 300, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-        label_titulo1.setText("Senha");
-
-        label_usuario.setText("Usuário");
-
-        senha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                senhaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(usuario)
-                        .addGap(50, 50, 50))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(label_titulo1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(label_usuario)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(senha)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(sair)
-                                .addGap(50, 50, 50)
-                                .addComponent(entrar)
-                                .addGap(0, 30, Short.MAX_VALUE)))
-                        .addGap(51, 51, 51))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
-                .addComponent(label_usuario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(label_titulo1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sair)
-                    .addComponent(entrar))
-                .addGap(22, 22, 22))
-        );
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    private void senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_senhaActionPerformed
-
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton entrar;
-    private javax.swing.JLabel label_titulo1;
-    private javax.swing.JLabel label_usuario;
-    private javax.swing.JButton sair;
-    private javax.swing.JPasswordField senha;
-    private javax.swing.JTextField usuario;
-    // End of variables declaration//GEN-END:variables
-  
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton entrar = new JButton("Entrar");
+		entrar.setBounds(152, 210, 89, 23);
+		contentPane.add(entrar);
+		
+		JButton sair = new JButton("Sair");
+		sair.setBounds(53, 210, 89, 23);
+		contentPane.add(sair);
+		
+		usuario = new JTextField();
+		usuario.setColumns(10);
+		usuario.setBounds(53, 101, 190, 20);
+		contentPane.add(usuario);
+		
+		JLabel label_usuario = new JLabel("Usuário");
+		label_usuario.setBounds(53, 76, 46, 14);
+		contentPane.add(label_usuario);
+		
+		senha = new JPasswordField();
+		senha.setBounds(53, 150, 188, 20);
+		contentPane.add(senha);
+		
+		JLabel label_senha = new JLabel("Senha");
+		label_senha.setBounds(53, 132, 46, 14);
+		contentPane.add(label_senha);
+		
+		JLabel lblNewLabel_1 = new JLabel("Login");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(53, 33, 188, 14);
+		contentPane.add(lblNewLabel_1);
+	}
 }
