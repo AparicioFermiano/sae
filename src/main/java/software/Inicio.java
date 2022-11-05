@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 
-public class inicio extends JFrame {
+public class Inicio extends JFrame {
 
 	private JPanel contentPane;
 
@@ -23,7 +23,7 @@ public class inicio extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					inicio frame = new inicio();
+					Inicio frame = new Inicio();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +35,7 @@ public class inicio extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public inicio() {
+	public Inicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 400);
 		contentPane = new JPanel();
@@ -48,7 +48,7 @@ public class inicio extends JFrame {
 		btnAlunos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					alunos telaAlunos = new alunos();
+					Alunos telaAlunos = new Alunos();
 					telaAlunos.setVisible(true);
 				} catch (Exception e1) {
 					e1.printStackTrace();
@@ -61,7 +61,7 @@ public class inicio extends JFrame {
 		JButton btnTurmas = new JButton("Turmas");
 		btnTurmas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				turmas telaTurmas = new turmas();
+				Turmas telaTurmas = new Turmas();
 				telaTurmas.setVisible(true);
 			}
 		});
@@ -72,7 +72,7 @@ public class inicio extends JFrame {
 		btnGerenciar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					gestor telaGestor = new gestor();
+					Gestor telaGestor = new Gestor();
 					telaGestor.setVisible(true);
 				} catch (Exception e2) {
 					e2.printStackTrace();
@@ -86,7 +86,7 @@ public class inicio extends JFrame {
 		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					confirm telaConfirm = new confirm();
+					Confirm telaConfirm = new Confirm();
 					telaConfirm.setVisible(true);
 				} catch (Exception e2) {
 					e2.printStackTrace();
@@ -100,7 +100,7 @@ public class inicio extends JFrame {
 		btnPerfil.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					perfil telaPerfil = new perfil();
+					Perfil telaPerfil = new Perfil();
 					telaPerfil.setVisible(true);
 				} catch (Exception e3) {
 					e3.printStackTrace();

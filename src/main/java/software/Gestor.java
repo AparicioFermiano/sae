@@ -5,9 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 
-public class turmas extends JFrame {
+public class Gestor extends JFrame {
 
 	private JPanel contentPane;
 
@@ -18,7 +17,7 @@ public class turmas extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					turmas frame = new turmas();
+					Gestor frame = new Gestor();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,17 +29,13 @@ public class turmas extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public turmas() {
+	public Gestor() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("TESTEE TURMA");
-		lblNewLabel.setBounds(168, 78, 107, 53);
-		contentPane.add(lblNewLabel);
 	}
+
 }

@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.SwingConstants;
 
-public class login extends JFrame {
+public class Login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField usuario;
@@ -24,7 +24,7 @@ public class login extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					login frame = new login();
+					Login frame = new Login();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class login extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public login() {
+	public Login() {
 		setTitle("Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 300, 300);

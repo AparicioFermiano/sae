@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
-public class confirm extends JDialog {
+public class Confirm extends JDialog {
 
 	/**
 	 Classe para caixa de confirmacao
@@ -28,7 +28,7 @@ public class confirm extends JDialog {
 	
 	public static void main(String[] args) {
 		try {
-			confirm dialog = new confirm();
+			Confirm dialog = new Confirm();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -36,7 +36,7 @@ public class confirm extends JDialog {
 		}
 	}
 
-	public confirm() {
+	public Confirm() {
 		this.setBounds(100, 100, 250, 170);
 		BufferedImage logo = null;
 		try {
