@@ -85,8 +85,9 @@ public class Inicio extends JFrame {
 		JButton btnSair = new JButton("Sair");
 		btnSair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String msg = "Deseja realmente sair?";
 				try {
-					Confirm telaConfirm = new Confirm();
+					Confirm telaConfirm = new Confirm(msg, 2);
 					telaConfirm.setVisible(true);
 				} catch (Exception e2) {
 					e2.printStackTrace();

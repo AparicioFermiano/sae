@@ -17,6 +17,8 @@ import java.io.IOException;
 import javax.swing.SwingConstants;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Confirm extends JDialog {
 
@@ -28,7 +30,7 @@ public class Confirm extends JDialog {
 	
 	public static void main(String[] args) {
 		try {
-			Confirm dialog = new Confirm();
+			Confirm dialog = new Confirm("Deseja continuar", 3);
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -36,22 +38,44 @@ public class Confirm extends JDialog {
 		}
 	}
 
-	public Confirm() {
+	public Confirm(String msg, Integer tipo) {
 		this.setBounds(100, 100, 250, 170);
 		BufferedImage logo = null;
+		String iconConfirm = null;
+		String title = null;
+		String btn_next = "Sim";
+		String btn_prev = "Cancelar";
+		switch(tipo) {
+			// Acerto
+			case 1:
+				iconConfirm = "C:\\workspace\\sae\\src\\main\\java\\image\\sucess.png";
+				title = "Sucesso";
+				break;
+			// Informacao
+			case 2:
+				iconConfirm = "C:\\workspace\\sae\\src\\main\\java\\image\\atencao.png";
+				title = "Atenção";
+				break;
+			
+			case 3:
+				iconConfirm = "C:\\workspace\\sae\\src\\main\\java\\image\\error.png";
+				title = "Erro";
+				
+				break;
+		}
 		try {
-			logo = ImageIO.read(new File("C:\\workspace\\sae\\src\\main\\java\\image\\atencao.png"));
+			logo = ImageIO.read(new File(iconConfirm));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		this.setTitle("Atenção");
+		this.setTitle(title);
 		this.setIconImage(logo);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		JLabel MsgConfirm = new JLabel("Deseja realmente sair?");
+		JLabel MsgConfirm = new JLabel(msg);
 		MsgConfirm.setHorizontalAlignment(SwingConstants.CENTER);
 		MsgConfirm.setFont(new Font("Arial", Font.PLAIN, 14));
 		MsgConfirm.setBounds(68, 11, 146, 76);
@@ -62,7 +86,7 @@ public class Confirm extends JDialog {
 		//Verifica se existe a imagem
 		BufferedImage icon = null;
 		try {
-			icon = ImageIO.read(new File("C:\\workspace\\sae\\src\\main\\java\\image\\atencao.png"));
+			icon = ImageIO.read(new File(iconConfirm));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -76,12 +100,16 @@ public class Confirm extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("Sim");
-				okButton.setActionCommand("OK");
+				okButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+					}
+				});
+				okButton.setActionCommand(btn_next);
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
-				JButton cancelButton = new JButton("Cancelar");
+				JButton cancelButton = new JButton(btn_prev);
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
 			}
