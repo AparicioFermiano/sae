@@ -87,6 +87,7 @@ public class Inicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String msg = "Deseja realmente sair?";
 				try {
+					//2 parametros: msg e tipo do confirm
 					Confirm telaConfirm = new Confirm(msg, 2);
 					telaConfirm.setVisible(true);
 				} catch (Exception e2) {
