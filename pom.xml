@@ -11,4 +11,11 @@
         <maven.compiler.target>11</maven.compiler.target>
         <exec.mainClass>software.Sae</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.19</version>
+        </dependency>
+        </dependencies>    
 </project>
